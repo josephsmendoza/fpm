@@ -1,0 +1,33 @@
+{
+	"authors": [
+		"josephsmendoza"
+	],
+	"copyright": "Copyright © 2021, josephsmendoza",
+	"dependencies": {
+		"asdf": "~>0.7.5",
+		"fpm:uflink":"*",
+		"fpm:smerge":"*"
+	},
+	"description": "File Package Manager",
+	"license": "public domain",
+	"name": "fpm",
+	"targetName": "fpm",
+	"configurations": [
+		{
+			"mainSourceFile": "source/fpm/app.d",
+			"name": "cli",
+			"targetType": "executable"
+		},
+		{
+			"name": "lib",
+			"targetType": "library"
+		}
+	],
+	"subPackages": [
+		"util/flink",
+		"util/rflink",
+		"util/uflink",
+		"util/smerge",
+		"util/extra"
+	]
+}

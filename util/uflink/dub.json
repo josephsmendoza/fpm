@@ -1,0 +1,25 @@
+{
+	"authors": [
+		"josephsmendoza"
+	],
+	"copyright": "Copyright © 2021, josephsmendoza",
+	"dependencies": {
+		"asdf": "~>0.7.5",
+		"fpm:rflink": "*"
+	},
+	"description": "Union File Link",
+	"license": "public domain",
+	"name": "uflink",
+	"targetName": "uflink",
+	"configurations": [
+		{
+			"mainSourceFile": "source/fpm/app.d",
+			"name": "cli",
+			"targetType": "executable"
+		},
+		{
+			"name": "lib",
+			"targetType": "library"
+		}
+	]
+}

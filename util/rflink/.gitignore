@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/rflink
+rflink.so
+rflink.dylib
+rflink.dll
+rflink.a
+rflink.lib
+rflink-test-*
+*.exe
+*.o
+*.obj
+*.lst

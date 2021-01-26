@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/smerge
+smerge.so
+smerge.dylib
+smerge.dll
+smerge.a
+smerge.lib
+smerge-test-*
+*.exe
+*.o
+*.obj
+*.lst

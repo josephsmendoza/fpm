@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/extra
+extra.so
+extra.dylib
+extra.dll
+extra.a
+extra.lib
+extra-test-*
+*.exe
+*.o
+*.obj
+*.lst

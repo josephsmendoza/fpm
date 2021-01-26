@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/uflink
+uflink.so
+uflink.dylib
+uflink.dll
+uflink.a
+uflink.lib
+uflink-test-*
+*.exe
+*.o
+*.obj
+*.lst

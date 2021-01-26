@@ -1,0 +1,25 @@
+{
+	"authors": [
+		"josephsmendoza"
+	],
+	"copyright": "Copyright © 2021, josephsmendoza",
+	"description": "Recursive File Link",
+	"license": "public domain",
+	"name": "rflink",
+	"targetName": "rflink",
+	"dependencies": {
+		"fpm:flink": "*",
+		"fpm:extra": "*"
+	},
+	"configurations": [
+		{
+			"mainSourceFile": "source/fpm/app.d",
+			"name": "cli",
+			"targetType": "executable"
+		},
+		{
+			"name": "lib",
+			"targetType": "library"
+		}
+	]
+}

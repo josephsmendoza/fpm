@@ -1,0 +1,10 @@
+{
+	"authors": [
+		"josephsmendoza"
+	],
+	"copyright": "Copyright © 2021, josephsmendoza",
+	"description": "extra utilities for fpm",
+	"license": "public domain",
+	"name": "extra",
+	"targetName": "extra"
+}

@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/flink
+flink.so
+flink.dylib
+flink.dll
+flink.a
+flink.lib
+flink-test-*
+*.exe
+*.o
+*.obj
+*.lst
