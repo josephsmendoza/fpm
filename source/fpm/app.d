@@ -74,3 +74,8 @@ private string[string] prettyMap(string[string] map, string baseDir){
 private void cli(string command){
     .command=command;
 }
+
+
+unittest{
+    assert(1+1==2);
+}
