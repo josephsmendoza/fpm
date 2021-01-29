@@ -21,6 +21,7 @@ void main(string[] args) {
     // dfmt on
     if(opt.helpWanted){
         defaultGetoptPrinter("usage: fpm (command) (basseDir) [args...]", opt.options);
+        return;
     }
     args.popFront;
     switch(command){
