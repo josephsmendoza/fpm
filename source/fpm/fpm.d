@@ -140,5 +140,5 @@ void uninstall(string baseDir, string packageName) {
 }
 
 unittest{
-    writeln("this is a fake unit test");
+    assert(1+1==2);
 }
