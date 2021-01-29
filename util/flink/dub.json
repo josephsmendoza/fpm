@@ -15,7 +15,8 @@
 		},
 		{
 			"name": "lib",
-			"targetType": "library"
+			"targetType": "library",
+			"excludedSourceFiles": ["source/fpm/app.d"]
 		}
 	]
 }

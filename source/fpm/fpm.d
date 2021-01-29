@@ -138,3 +138,7 @@ void uninstall(string baseDir, string packageName) {
         packageConfigPath.remove();
     }
 }
+
+unittest{
+    writeln("this is a fake unit test");
+}
