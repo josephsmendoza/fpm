@@ -77,5 +77,5 @@ private void cli(string command){
 
 
 unittest{
-    assert(1+1==2);
+    writeln("this is a fake unit test");
 }
