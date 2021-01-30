@@ -24,6 +24,10 @@ void main(string[] args) {
         return;
     }
     args.popFront;
+    if(command.empty){
+        command=args[0];
+        args.popFront;
+    }
     switch(command){
         case "init|I":{
             Config conf;
