@@ -138,7 +138,3 @@ void uninstall(string baseDir, string packageName) {
         packageConfigPath.remove();
     }
 }
-
-unittest{
-    assert(1+1==2);
-}
