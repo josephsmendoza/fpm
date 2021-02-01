@@ -78,10 +78,23 @@ string[string] install(string baseDir, string archivePath, string packageName = 
     string dataPath = baseDir.buildPath(DATADIR);
     string packagePath = dataPath.buildPath(packageName);
     packagePath.mkdirRecurse();
-    extract(archivePath, packagePath);
+    string packageFilePath = packagePath.buildPath(archivePath.baseName);
+    flink(archivePath, packageFilePath, FORCE);
     string smergeConfigPath = dataPath.buildPath(SMERGECONF);
     Config config = smergeConfigPath.readText().deserialize!(Config);
-    string[string] linkMap = getPackageMap(packagePath, config, packageName, baseDir).relativeMap(dataPath);
+    Config noFallback=config;
+    noFallback.fallback=null;
+    string[string] linkMap = getPackageMap(packagePath, noFallback, packageName, baseDir).relativeMap(dataPath);
+    if (linkMap.length == 0) {
+        packageFilePath.remove;
+        try {
+            extract(archivePath, packagePath);
+            linkMap = getPackageMap(packagePath, config, packageName, baseDir).relativeMap(dataPath);
+        } catch (Exception e) {
+            flink(archivePath, packageFilePath, FORCE);
+            linkMap = getPackageMap(packagePath, config, packageName, baseDir).relativeMap(dataPath);
+        }
+    }
     string packageConfigPath = dataPath.buildPath(packageName ~ CONFIGEXT);
     packageConfigPath.write(linkMap.serializeToJsonPretty);
     enable(baseDir, packageName);
