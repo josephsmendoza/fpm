@@ -26,6 +26,14 @@ build_script:
 - pwsh: >-
     if($IsWindows){$env:PATH += ";/tools/ldc/bin"}
 
+    dub run :rflink -b release -c lib --parallel -- -h
+
+    dub run :uflink -b release -c lib --parallel -- -h
+
+    dub run :smerge -b release -c lib --parallel -- -h
+
+    dub run -b release -c lib --parallel -- -h
+
     dub run :flink -b release --parallel -- -h
 
     dub run :rflink -b release --parallel -- -h
