@@ -59,11 +59,11 @@ artifacts:
   name: uflink unix
 - path: util/smerge/smerge
   name: smerge unix
-- path: "**\*.a"
+- path: "**/*.a"
   name: unix static library
-- path: "**\*.lib"
+- path: "**/*.lib"
   name: windows static library
-- path: "**\*.exe"
+- path: "**/*.exe"
   name: windows program
-#- path: "**\*.h"
+#- path: "**/*.h"
 #  name: C header
