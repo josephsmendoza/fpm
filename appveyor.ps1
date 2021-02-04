@@ -13,7 +13,7 @@
         echo "uploading util/$_/$libpre$_$libext"
         Push-AppveyorArtifact util/$_/$libpre$_$libext
         dub build :$_ -b release -c cli --parallel
-        echo uploading "util/$_/$_$cliext"
+        echo "uploading util/$_/$_$cliext"
         Push-AppveyorArtifact util/$_/$_$cliext
     }
     $_="fpm"
