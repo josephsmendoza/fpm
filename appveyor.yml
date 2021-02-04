@@ -1,7 +1,7 @@
 version: '{build}'
 image:
-- Visual Studio 2019
 - Ubuntu
+- Visual Studio 2019
 - macOS
 install: pwsh -c appveyor/install.ps1
 build_script: pwsh -c appveyor/build.ps1
