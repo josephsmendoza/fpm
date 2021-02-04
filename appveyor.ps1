@@ -18,7 +18,7 @@
     }
     $_="fpm"
     dub build -b release -c lib --parallel
-    echo "uploading $libpre$_$cliext"
+    echo "uploading $libpre$_$libext"
     Push-AppveyorArtifact $libpre$_$cliext
     dub build -b release -c cli --parallel
     echo "uploading $_$cliext"
