@@ -5,8 +5,7 @@ if(get-command dub){}else{
     if($IsMacOS){
         brew install dub ldc
     } if ($IsLinux){
-        sudo snap install --classic --channel=edge ldc2
-        sudo snap install --classic --channel=edge dub
+        wget -qO- https://gist.github.com/josephsmendoza/2c1f55120dbe565f6eea600f513cc9c1/raw/ | sudo bash
     } if ($IsWindows){
         choco install ldc
         mv /tools/ldc* /tools/ldc
