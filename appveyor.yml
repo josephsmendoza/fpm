@@ -49,13 +49,21 @@ test_script:
 
     dub test --parallel
 artifacts:
-- path: fpm*
-  name: fpm
-- path: util/flink/flink*
-  name: flink
-- path: util/rflink/rflink*
-  name: rflink
-- path: util/uflink/uflink*
-  name: uflink
-- path: util/smerge/smerge*
-  name: smerge
+- path: fpm
+  name: fpm unix
+- path: util/flink/flink
+  name: flink unix
+- path: util/rflink/rflink
+  name: rflink unix
+- path: util/uflink/uflink
+  name: uflink unix
+- path: util/smerge/smerge
+  name: smerge unix
+- path: "**\*.a"
+  name: unix static library
+- path: "**\*.lib"
+  name: windows static library
+- path: "**\*.exe"
+  name: windows program
+#- path: "**\*.h"
+#  name: C header
