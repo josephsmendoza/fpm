@@ -7,26 +7,27 @@ install:
 - pwsh: >-
     $ErrorActionPreference = 'SilentlyContinue'
 
-    if(get-command dub){exit}
+    if(get-command dub){}else{
 
-    $ErrorActionPreference = 'Stop'
+      $ErrorActionPreference = 'Stop'
 
-    if($IsMacOS){
+      if($IsMacOS){
 
-    brew install dub ldc
+      brew install dub ldc
 
-    } if ($IsLinux){
+      } if ($IsLinux){
 
-    sudo snap install --classic --channel=edge ldc2
+      sudo snap install --classic --channel=edge ldc2
 
-    sudo snap install --classic --channel=edge dub
+      sudo snap install --classic --channel=edge dub
 
-    } if ($IsWindows){
+      } if ($IsWindows){
 
-    choco install ldc
+      choco install ldc
 
-    mv /tools/ldc* /tools/ldc
+      mv /tools/ldc* /tools/ldc
 
+      }
     }
 build_script:
 - pwsh: ./appveyor.ps1
