@@ -1,8 +1,8 @@
 version: '{build}'
 image:
-- macOS
-- Ubuntu
 - Visual Studio 2019
+- Ubuntu
+- macOS
 install:
 - pwsh: >-
     if($IsMacOS){
