@@ -5,6 +5,12 @@ image:
 - macOS
 install:
 - pwsh: >-
+    $ErrorActionPreference = 'SilentlyContinue'
+
+    if(get-command dub){exit}
+
+    $ErrorActionPreference = 'Stop'
+
     if($IsMacOS){
 
     brew install dub ldc
