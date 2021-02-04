@@ -1,0 +1,53 @@
+version: '{build}'
+image:
+- macOS
+- Ubuntu
+- Visual Studio 2019
+install:
+- pwsh: >-
+    if($IsMacOS){
+
+    brew install dub ldc
+
+    } if ($IsLinux){
+
+    sudo snap install --classic --channel=edge ldc2
+
+    sudo snap install --classic --channel=edge dub
+
+    } if ($IsWindows){
+
+    choco install ldc
+
+    mv /tools/ldc* /tools/ldc
+
+    }
+build_script:
+- pwsh: >-
+    if($IsWindows){$env:PATH += ";/tools/ldc/bin"}
+
+    dub run :flink -b release --parallel -- -h
+
+    dub run :rflink -b release --parallel -- -h
+
+    dub run :uflink -b release --parallel -- -h
+
+    dub run :smerge -b release --parallel -- -h
+
+    dub run -b release --parallel -- -h
+test_script:
+- pwsh: >-
+    if($IsWindows){$env:PATH += ";/tools/ldc/bin"}
+
+    dub test --parallel
+artifacts:
+- path: fpm*
+  name: fpm
+- path: util/flink/flink*
+  name: flink
+- path: util/rflink/rflink*
+  name: rflink
+- path: util/uflink/uflink*
+  name: uflink
+- path: util/smerge/smerge*
+  name: smerge
