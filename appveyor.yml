@@ -3,36 +3,9 @@ image:
 - Visual Studio 2019
 - Ubuntu
 - macOS
-install:
-- pwsh: >-
-    $ErrorActionPreference = 'SilentlyContinue'
-
-    if(get-command dub){}else{
-
-      $ErrorActionPreference = 'Stop'
-
-      if($IsMacOS){
-
-      brew install dub ldc
-
-      } if ($IsLinux){
-
-      sudo snap install --classic --channel=edge ldc2
-
-      sudo snap install --classic --channel=edge dub
-
-      } if ($IsWindows){
-
-      choco install ldc
-
-      mv /tools/ldc* /tools/ldc
-
-      }
-    }
-build_script:
-- pwsh: ./appveyor.ps1
+install: pwsh -c ./appveyor_install.ps1
+build_script: pwsh -c ./appveyor_build.ps1
 test_script:
 - pwsh: >-
     if($IsWindows){$env:PATH += ";/tools/ldc/bin"}
-
     dub test --parallel
