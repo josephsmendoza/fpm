@@ -43,27 +43,22 @@ build_script:
     dub build :smerge -b release --parallel
 
     dub build -b release --parallel
+
+    if($IsWindows){
+      
+      $cliext=".exe"
+
+      $libext=".lib"
+
+    }else{
+
+      $libext=".a"
+
+    }
+
+    "fpm", "util/flink/flink", "util/rflink/rflink", "util/uflink/uflink", "util/smerge/smerge" | ForEach-Object {Push-AppveyorArtifact $_$cliext; Push-AppveyorArtifact $_$libext}
 test_script:
 - pwsh: >-
     if($IsWindows){$env:PATH += ";/tools/ldc/bin"}
 
     dub test --parallel
-artifacts:
-- path: fpm
-  name: fpm unix
-- path: util/flink/flink
-  name: flink unix
-- path: util/rflink/rflink
-  name: rflink unix
-- path: util/uflink/uflink
-  name: uflink unix
-- path: util/smerge/smerge
-  name: smerge unix
-- path: "['**','!.dub']/*.a"
-  name: unix static library
-- path: "['**','!.dub']/*.lib"
-  name: windows static library
-- path: "['**','!.dub']/*.exe"
-  name: windows program
-#- path: "**/*.h"
-#  name: C header
