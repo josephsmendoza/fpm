@@ -23,7 +23,7 @@ install:
 
     }
 build_script:
-- pwsh: appveyor.ps1
+- pwsh: ./appveyor.ps1
 test_script:
 - pwsh: >-
     if($IsWindows){$env:PATH += ";/tools/ldc/bin"}
