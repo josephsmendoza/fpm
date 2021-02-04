@@ -1,4 +1,3 @@
-
 $ErrorActionPreference = 'SilentlyContinue'
 if(get-command dub){}else{
     $ErrorActionPreference = 'Stop'

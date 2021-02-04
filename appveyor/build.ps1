@@ -1,4 +1,3 @@
-
 $ErrorActionPreference = 'Continue'
 if($IsWindows){
     $env:PATH += ";/tools/ldc/bin"
